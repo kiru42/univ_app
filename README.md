@@ -6,7 +6,7 @@
 rails new PROJECT_NAME
 cd PROJECT_NAME
 
-# test server is working
+# test if server is working
 rails s
 ```
 
