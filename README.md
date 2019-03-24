@@ -48,3 +48,10 @@ gem 'materialize-sass', '~> 1.0.0'
 gem 'material_icons'
 gem 'jquery-rails'
 ```
+
+## Updating routes
+
+```ruby
+get 'courses/new', to: 'courses#new'
+get 'about', to: 'pages#about'
+```
