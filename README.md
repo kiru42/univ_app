@@ -72,3 +72,9 @@ update_rails_disk_service PUT  /rails/active_storage/disk/:encoded_token(.:forma
 ```
 
 ## link_to in views
+
+```ruby
+    <%= link_to 'Home', root_path  %>
+    <%= link_to 'About', about_path  %>
+    <%= link_to 'Add Course', courses_new_path  %>
+```
