@@ -36,3 +36,15 @@ end
 ```
 
 ## Creating view : app/views/courses/index.html.erb
+
+```html
+<h1>Courses index</h1>
+```
+
+## Add more gems
+
+```ruby
+gem 'materialize-sass', '~> 1.0.0'
+gem 'material_icons'
+gem 'jquery-rails'
+```
