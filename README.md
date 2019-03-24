@@ -17,3 +17,22 @@ rails s
 ```ruby
 gem 'sqlite3', '~> 1.3.6'
 ```
+
+## Adding root route
+
+```ruby
+Rails.application.routes.draw do
+  root 'courses#index'
+end
+```
+
+## Creating controller : app/controllers/courses_controller.rb
+
+```ruby
+class CoursesController < ApplicationController
+  def index
+  end
+end
+```
+
+## Creating view : app/views/courses/index.html.erb
