@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Start Rails app
 
-Things you may want to cover:
+```bash
+rails new PROJECT_NAME
+cd PROJECT_NAME
 
-* Ruby version
+# test server is working
+rails s
+```
 
-* System dependencies
+## Fixing sqlite version
 
-* Configuration
+- #<LoadError: Error loading the 'sqlite3' Active Record adapter. Missing a gem it depends on? can't activate sqlite3 (~> 1.3.6), already activated sqlite3-1.4.0. Make sure all dependencies are added to Gemfile.>
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```ruby
+gem 'sqlite3', '~> 1.3.6'
+```
