@@ -1,14 +1,22 @@
     <header>
       <!-- Dropdown Structure -->
       <ul id="dropdown1" class="dropdown-content">
-        <li><%= session_link %></li>
+        <% if logged_in? %>
+          <li><%= link_to "My profile", student_path(current_user) %></li>
+        <% else %>
+          <li><%= link_to "Sign up", new_student_path %></li>
+        <% end %>
         <li class="divider"></li>
-        <li><a href="#!">three</a></li>
+        <li><%= session_link %></li>
       </ul>
       <ul id="dropdown2" class="dropdown-content">
-        <li><%= session_link %></li>
+        <% if logged_in? %>
+          <li><%= link_to "My profile", student_path(current_user) %></li>
+        <% else %>
+          <li><%= link_to "Sign up", new_student_path %></li>
+        <% end %>
         <li class="divider"></li>
-        <li><a href="#!">Logout</a></li>
+        <li><%= session_link %></li>
       </ul>
       <nav>
         <div class="container">
