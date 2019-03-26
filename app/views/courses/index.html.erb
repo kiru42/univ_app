@@ -5,11 +5,12 @@
 </div>
 
 <div class="row">
+  <% @courses.each do |course| %>
   <div class="col s6 m6">
     <div class="card blue darken-4">
       <div class="card-content white-text">
-        <span class="card-title">CS111: Intro to computer science</span>
-        <p>A thorough intro to computer science</p>
+        <span class="card-title"><%= course.short_name %>: <%= course.name %></span>
+        <p><%= course.description %></p>
       </div>
       <div class="card-action">
         <a href="#">Enroll</a>
@@ -17,43 +18,5 @@
       </div>
     </div>
   </div>
-  <div class="col s6 m6">
-    <div class="card blue darken-4">
-      <div class="card-content white-text">
-        <span class="card-title">CS112: Intro to computer science II</span>
-        <p>A thorough intro to computer science</p>
-      </div>
-      <div class="card-action">
-        <a href="#">Enroll</a>
-        <a href="#">Info</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col s6 m6">
-    <div class="card blue darken-4">
-      <div class="card-content white-text">
-        <span class="card-title">CS111: Intro to computer science III</span>
-        <p>A thorough intro to computer science</p>
-      </div>
-      <div class="card-action">
-        <a href="#">Enroll</a>
-        <a href="#">Info</a>
-      </div>
-    </div>
-  </div>
-  <div class="col s6 m6">
-    <div class="card blue darken-4">
-      <div class="card-content white-text">
-        <span class="card-title">CS112: Intro to computer science VI</span>
-        <p>A thorough intro to computer science</p>
-      </div>
-      <div class="card-action">
-        <a href="#">Enroll</a>
-        <a href="#">Info</a>
-      </div>
-    </div>
-  </div>
+  <% end %>
 </div>
