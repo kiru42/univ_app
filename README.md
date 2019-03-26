@@ -150,3 +150,68 @@ class User < ApplicationRecord
   has_secure_password
 end
 ```
+
+## flash messages
+
+### fade out flash message with jquery
+
+```js
+$('#fade-out-target').fadeOut(4000);
+```
+
+### add a flash message
+
+```ruby
+flash[:notice] = "You have successfully signed up"
+```
+
+### remove default behaviour of errors on forms' input
+
+```ruby
+# Add to config/environment.rb
+ActionView::Base.field_error_proc = Proc.new do |html_tag, instance_tag|
+  html_tag
+end
+```
+
+### Go through all forms errors
+
+```erb
+<% if @student.errors.any? %>
+  <div class="container">
+    <div class="row sign-up-form">
+      <div class="col s12 m12 l12">
+        <div class="card-panel red lighten-1">
+          <span class="white-text">
+            <strong><%= pluralize(@student.errors.count, "error") %>
+            prohibited your profile from being created: </strong>
+            <ul>
+              <% @student.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+```
+
+### Go through all flash messages
+
+```erb
+      <% flash.each do |key, message| %>
+        <div class="container">
+          <div class="row sign-up-form">
+            <div class="col s12 m12 l12">
+              <div class="card-panel green lighten-1" id="fade-out-target">
+                <span class="white-text">
+                  <%= message %>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+```
