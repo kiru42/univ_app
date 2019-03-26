@@ -297,3 +297,31 @@ end
 
 <%= f.submit(@student.new_record? ? "Sign up" : "Update" , class: "btn orange waves-effect waves-light right") %>
 ```
+
+### Shared errors
+
+```erb
+<%= render 'shared/errors', obj: @student %>
+```
+
+```erb
+<% if obj.errors.any? %>
+  <div class="container">
+    <div class="row sign-up-form">
+      <div class="col s12 m12 l12">
+        <div class="card-panel red lighten-1">
+          <span class="white-text">
+            <strong><%= pluralize(obj.errors.count, "error") %>
+            prohibited your profile from being <%= obj.new_record? ? "created" : "updated" %>: </strong>
+            <ul>
+              <% obj.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+```
