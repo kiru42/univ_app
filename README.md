@@ -325,3 +325,31 @@ end
   </div>
 <% end %>
 ```
+
+## has_secured_password
+
+- https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html
+
+```ruby
+class Student < ApplicationRecord
+  #...
+  has_secure_password
+end
+```
+
+```ruby
+gem 'bcrypt', '~> 3.1.7'
+```
+
+```bash
+bundle install
+rails generate migration add_password_digest_to_students
+```
+
+```ruby
+class AddPasswordDigestToStudents < ActiveRecord::Migration[5.2]
+  def change
+    add_column :students, :password_digest, :string
+  end
+end
+```
