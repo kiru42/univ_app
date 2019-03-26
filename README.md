@@ -103,3 +103,29 @@ end
 # Run Migration
 rails db:migrate
 ```
+
+## Using partials
+
+```erb
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UnivApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'layouts/navigation' %>
+    <main>
+      <div class="container">
+      <%= yield %>
+      </div>
+    </main>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>
+```
