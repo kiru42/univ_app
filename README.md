@@ -78,3 +78,28 @@ update_rails_disk_service PUT  /rails/active_storage/disk/:encoded_token(.:forma
     <%= link_to 'About', about_path  %>
     <%= link_to 'Add Course', courses_new_path  %>
 ```
+
+## Migrations
+
+```bash
+# generate a migration file
+rails generate migration create_courses
+```
+
+```ruby
+class CreateCourses < ActiveRecord::Migration[5.2]
+  def change
+    create_table :courses do |t|
+      t.string :short_name
+      t.string :name
+      t.text :description
+      t.timestamps
+    end
+  end
+end
+```
+
+```bash
+# Run Migration
+rails db:migrate
+```
