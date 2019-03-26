@@ -129,3 +129,24 @@ rails db:migrate
   </body>
 </html>
 ```
+
+## Email validation
+
+```ruby
+class User < ApplicationRecord
+  # active record callback
+  before_save { self.email = email.downcase }
+  # has_many relationship
+  has_many :articles, dependent: :destroy
+  # uniqueness validation
+  validates :username, presence: true, uniqueness: { case_sensitive: false },
+            length: { minimum: 3, maximum: 25 }
+  # email validation
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, length: { maximum: 105 },
+            uniqueness: { case_sensitive: false },
+            format: { with: VALID_EMAIL_REGEX }
+  # Secure password
+  has_secure_password
+end
+```
