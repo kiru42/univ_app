@@ -272,3 +272,28 @@ end
         </div>
       <% end %>
 ```
+
+## DRY / Smelly Code
+
+### Controller
+
+```ruby
+class StudentsController < ApplicationController
+
+  before_action :set_student, only: [:show, :edit, :update]
+  # ...
+  private
+
+  def set_student
+    @student = Student.find(params[:id])
+  end
+end
+```
+
+### Views
+
+```erb
+<%= @student.new_record? ? "created" : "updated" %>
+
+<%= f.submit(@student.new_record? ? "Sign up" : "Update" , class: "btn orange waves-effect waves-light right") %>
+```
