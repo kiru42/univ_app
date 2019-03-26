@@ -1,3 +1,8 @@
+@import 'materialize/components/color-variables';
+
+$primary-color: color('blue', 'darken-3') !default;
+$secondary-color: color('blue', 'base') !default;
+
 @import 'materialize';
 
 body {
