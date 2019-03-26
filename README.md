@@ -155,7 +155,7 @@ end
 
 ### new form
 
-```
+```erb
 <div class="container">
   <div class="row center sign-up-form">
     <div class="col s12 m12 l12">
